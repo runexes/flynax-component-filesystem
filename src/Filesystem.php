@@ -44,7 +44,7 @@ class Filesystem extends \Symfony\Component\Filesystem\Filesystem
         $override = isset($options['override']) ? $options['override'] : false;
 
         try {
-            if (\is_dir($source)) {
+            if (is_dir($source)) {
                 $iterator = isset($options['iterator']) ? $options['iterator'] : null;
                 $options  = array(
                     'override'        => $override,
@@ -56,7 +56,7 @@ class Filesystem extends \Symfony\Component\Filesystem\Filesystem
                 parent::copy($source, $destination, $override);
             }
         } catch (IOException $exception) {
-            if (null !== $catchExceptionFunc && \is_callable($catchExceptionFunc)) {
+            if (null !== $catchExceptionFunc && is_callable($catchExceptionFunc)) {
                 $catchExceptionFunc($exception);
             }
 

@@ -1,0 +1,9 @@
+image: cespi/php-5.3:fpm-latest
+
+before_script:
+- curl -sS https://getcomposer.org/installer | php
+- php composer.phar install
+
+phpunit:
+  script:
+  - vendor/bin/phpunit --configuration phpunit.xml
