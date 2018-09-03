@@ -30,6 +30,6 @@ public function updateXXX()
 {
     require_once RL_UPLOAD . '<pluginKey>/vendor/autoload.php';
     $filesystem = new \Flynax\Component\Filesystem();
-    $filesystem->copy(RL_UPLOAD . '<pluginKey>/vendor', __DIR__ . '/vendor');
+    $filesystem->copy(RL_UPLOAD . '<pluginKey>/vendor', RL_PLUGINS . '<pluginKey>/vendor');
 }
 ```
