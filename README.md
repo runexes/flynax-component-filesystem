@@ -16,7 +16,7 @@ Add to your **composer.json**
   }
 ],
 "require": {
-    "flynax/filesystem": "1.0.0"
+    "flynax/filesystem": "1.0.1"
 }
 ```
 
@@ -29,7 +29,7 @@ Example how to copy **vendor/** directory from upload directory to plugin root
 public function updateXXX()
 {
     require_once RL_UPLOAD . '<pluginKey>/vendor/autoload.php';
-    $filesystem = new \Flynax\Component\Filesystem();
-    $filesystem->copy(RL_UPLOAD . '<pluginKey>/vendor', RL_PLUGINS . '<pluginKey>/vendor');
+    $filesystem = new Flynax\Component\Filesystem();
+    $filesystem->copyTo(RL_UPLOAD . '<pluginKey>/vendor', RL_PLUGINS . '<pluginKey>/vendor');
 }
 ```
