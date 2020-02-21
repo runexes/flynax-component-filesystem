@@ -17,7 +17,7 @@ class CopyTest extends \PHPUnit\Framework\TestCase
      */
     public function testCopyFilesAndDirectories(Filesystem $filesystem, $source, $target)
     {
-        $result = $filesystem->copy($source, $target);
+        $result = $filesystem->copyTo($source, $target);
         $success = ($result && file_exists($target));
 
         $this->assertTrue($success);
