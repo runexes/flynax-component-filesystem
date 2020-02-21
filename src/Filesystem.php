@@ -19,6 +19,7 @@ use Symfony\Component\Filesystem\Exception\FileNotFoundException;
  * Provides basic utility to manipulate the file system
  *
  * @author Alex <runexes@me.com>
+ * @since  1.0.1 Renamed method "copy" to "copyTo"
  */
 class Filesystem extends \Symfony\Component\Filesystem\Filesystem
 {
@@ -36,10 +37,10 @@ class Filesystem extends \Symfony\Component\Filesystem\Filesystem
      *
      * @throws FileNotFoundException - When source doesn't exist
      * @throws IOException           - When copy fails
-     * 
+     *
      * @return bool
      */
-    public function copy($source, $destination, $catchExceptionFunc = null, $options = array())
+    public function copyTo($source, $destination, $catchExceptionFunc = null, $options = array())
     {
         $override = isset($options['override']) ? $options['override'] : false;
 
